@@ -1,0 +1,28 @@
+//使用reference配置，我们只需将“引用”添加到网格并使用 lookupReference它来获取它
+
+Ext.define('MyApp.view.foo.Foo', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'foo',
+    controller: 'foo',
+
+    tbar: [{
+        xtype: 'button',
+        text: 'Add',
+        handler: 'onAdd'
+    }],
+
+    items: [{
+        xtype: 'grid',
+        reference: 'fooGrid'
+        ...
+    }]
+});
+
+Ext.define('MyApp.view.foo.FooController', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.foo',
+
+    onAdd: function () {
+        var grid = this.lookupReference('fooGrid');
+    }
+});
