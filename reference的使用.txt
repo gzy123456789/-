@@ -26,5 +26,3 @@ Ext.define('MyApp.view.foo.FooController', {
         var grid = this.lookupReference('fooGrid');
     }
 });
-
-//genggai...
